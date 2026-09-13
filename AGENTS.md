@@ -11,8 +11,9 @@ and relevant accepted decisions before changing its architecture.
   aggregate. The copy must remain self-contained for forks. When working under
   that aggregate, run `scripts/check-plugin-ci.sh DankT3Code` from its root.
 - `main` pushes trigger versioned releases. Do not promote the `0.0.0`
-  development scaffold. Complete the release milestone and bump `plugin.json`
-  before marking the bootstrap promotion ready.
+  development scaffold. Complete the milestone's pre-promotion checks and bump
+  `plugin.json` before marking the bootstrap promotion ready. Verify the published
+  release and close the milestone after promotion.
 - Keep the first release read-only with respect to T3 agents. Connection pairing
   may create a client session; it does not authorize agent commands.
 - Keep T3-specific connection/state ownership here. Do not introduce a dependency

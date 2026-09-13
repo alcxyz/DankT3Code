@@ -28,9 +28,10 @@ language is selected by adopting this workflow.
 Releases use `plugin.json`'s `X.Y.Z` version and the standard `main`-push workflow.
 During bootstrap, `dev` is the default branch and the `dev` to `main` promotion is
 a draft. `0.0.0` is a development scaffold, not a published working version.
-Complete the `v0.1.0` release milestone, bump the manifest, then promote and switch
-the default branch to `main` as part of release readiness. Do not add a custom
-release bypass for the scaffold.
+Complete the pre-promotion checks tracked in the `v0.1.0` milestone, bump the
+manifest, then promote and switch the default branch to `main`. Verify the
+published release before closing the release issue and milestone. Do not add a
+custom release bypass for the scaffold.
 
 ## Alternatives considered
 
