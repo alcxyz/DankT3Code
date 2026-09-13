@@ -26,8 +26,10 @@ and relevant accepted decisions before changing its architecture.
   metadata into logs, diagnostics, fixtures, or issues.
 - Use sanitized synthetic fixtures. Keep runtime diagnostics limited to defined
   categories and timestamps; avoid raw server error text.
-- Backend language and transport details are unresolved until the compatibility
-  spike. Do not add a speculative daemon, adapter framework, or runtime dependency.
+- ADR-0003 selects a Go standard-library, one-shot HTTP collector. Do not add a
+  daemon, adapter framework, WebSocket runtime, or dependency without new evidence.
+  The minimized collector stdout is private UI data, not a diagnostic report;
+  never attach live output to issues without review.
 - Run checks appropriate to the implementation. Use `test.sh` for plugin checks
   when introduced; Go helpers use `go.mod`, `gofmt`, and affected-module tests.
 - Track unfinished work in GitHub issues and milestones. Use conventional-ish

@@ -4,9 +4,11 @@ A planned [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
 companion for [T3 Code](https://github.com/pingdotgg/t3code): see what your agents
 are doing, notice when they need attention, and return to the relevant thread.
 
-**Status: bootstrap only.** The QML component displays a development placeholder.
-It does not connect to T3 Code, report agent activity, or send notifications yet.
-Version `0.0.0` identifies the scaffold; `v0.1.0` is the first working release target.
+**Status: early development.** A Go collector can read a minimized activity
+snapshot from T3 Code `0.0.40`. The QML component still displays a development
+placeholder; pairing, live bar updates, navigation, and notifications are not
+implemented yet. Version `0.0.0` identifies development; `v0.1.0` is the first
+working widget release target.
 This is an independent community plugin, not an official T3 Code integration.
 
 ## First release
@@ -20,7 +22,9 @@ This is an independent community plugin, not an official T3 Code integration.
 The first implementation will target one explicitly configured local environment.
 Multiple environments, remote pairing, and relay support are later work unless the
 compatibility investigation shows they are necessary for the local connection.
-No helper language or supported T3 version has been selected yet.
+The collector uses Go's standard library and authenticated HTTP snapshots.
+T3 `0.0.40` is the initial tested version; other releases/nightlies currently
+report incompatible. See [compatibility findings](docs/compatibility.md).
 
 ## Relationship to DankAIUsage
 
@@ -41,10 +45,34 @@ until the first release is ready. The standard workflow releases versions from
 `plugin.json` on pushes to `main`, so the scaffold must not be promoted as a
 working release.
 
-The copied CI workflow validates the manifest and component paths. It builds/tests
-a Go helper if `go.mod` is introduced and runs `test.sh` if present. The bootstrap
-has no helper and no runtime test suite; manifest validation does not establish
-DMS or T3 compatibility.
+The copied CI workflow validates the manifest and component paths and builds/tests
+the Go collector. Unit tests use synthetic snapshots and local HTTP test servers.
+The optional [isolated release smoke test](docs/compatibility.md#reproduce-the-server-checks)
+exercises a published T3 server without accessing a running installation.
+Neither manifest validation nor collector tests establish live DMS compatibility.
+
+### Collector development
+
+With Go 1.22 or newer:
+
+```sh
+go test ./...
+go build -o /tmp/dankt3code ./cmd/dankt3code
+/tmp/dankt3code snapshot --endpoint http://127.0.0.1:3773 --token-file /path/to/bearer-token
+```
+
+Use your configured loopback server port. The token file must already contain a
+T3 bearer restricted to `orchestration:read`, owned by the current user and
+inaccessible to other users. Automated pairing is still pending; do not copy
+credentials from T3's private stores. No token is accepted as a command-line value.
+T3's read scope includes broader file access, although this collector calls only
+the descriptor and shell endpoints. See the permission notes in the compatibility
+document before arranging a live credential.
+
+The command emits schema-versioned JSON with either a connected observation or a
+defined error and nonzero exit status. Display labels belong to the private UI
+payload; do not paste live output into an issue. Raw errors, scripts, workspace
+paths, and conversation data are dropped. It writes no cache and starts no timer.
 
 For a development-only preview, copy `plugin.json` and `DankT3CodeWidget.qml`
 into `~/.config/DankMaterialShell/plugins/DankT3Code/`, then enable **T3 Code**
@@ -55,7 +83,7 @@ plugin registry submission are release-readiness tasks.
 
 - [First-release plan](docs/roadmap.md)
 - [Architecture decisions](docs/adr/README.md)
-- [Compatibility investigation](docs/compatibility.md)
+- [Compatibility findings](docs/compatibility.md)
 - [GitHub issues](https://github.com/alcxyz/DankT3Code/issues)
 - [GitHub milestones](https://github.com/alcxyz/DankT3Code/milestones)
 

@@ -25,7 +25,8 @@ state or duplicate alerts.
 
 ## Delivery order
 
-1. Verify the supported T3 connection and settle ADR-0003.
+1. Verify the supported T3 connection and settle ADR-0003. The HTTP collector
+   decision now has isolated `0.0.40` evidence; UI navigation remains unverified.
 2. Implement connection lifecycle and activity projection with synthetic fixtures.
 3. Build the DMS summary/dropdown and verified navigation.
 4. Add opt-in notifications and validate reconnect behavior.
@@ -33,6 +34,11 @@ state or duplicate alerts.
 
 Each implementation issue has acceptance criteria. Successful manifest CI on the
 scaffold is not completion of any runtime acceptance criterion.
+
+The current slice supplies a one-shot collector, synthetic fixtures, and the
+isolated server smoke harness. Pairing and scheduled polling remain in #2;
+the widget is still a placeholder. GitHub issue checklists distinguish completed
+evidence from remaining milestone work.
 
 ## Release gate
 
