@@ -16,7 +16,8 @@ at `alcxyz/DankT3Code`. Any future continuity mirror copies from GitHub; it neve
 pushes back into the canonical repository.
 
 Develop on `dev`. Protect `main`, require pull requests, and promote `dev` through
-a GitHub PR after checks pass. Squash merge by default and retain `dev`. GitHub
+a GitHub PR after checks pass. Squash-merge feature PRs, merge promotions with a
+merge commit (amended 2026-09-30), and retain `dev`. GitHub
 initializes the repository with a README/license baseline; subsequent development
 does not write directly to `main`.
 
