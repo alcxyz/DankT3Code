@@ -1,0 +1,239 @@
+{
+  "snapshotSequence": 42,
+  "projects": [
+    {
+      "id": "project-synthetic",
+      "title": "Synthetic project",
+      "workspaceRoot": "/synthetic/workspace",
+      "defaultModelSelection": null,
+      "scripts": [],
+      "createdAt": "2026-09-13T11:00:00.000Z",
+      "updatedAt": "2026-09-13T12:00:00.000Z"
+    }
+  ],
+  "threads": [
+    {
+      "id": "thread-running-input",
+      "projectId": "project-synthetic",
+      "title": "Synthetic async input",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "approval-required",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": {
+        "turnId": "turn-running-input",
+        "state": "running",
+        "requestedAt": "2026-09-13T11:58:00.000Z",
+        "startedAt": "2026-09-13T11:58:01.000Z",
+        "completedAt": null,
+        "assistantMessageId": null
+      },
+      "createdAt": "2026-09-13T11:57:00.000Z",
+      "updatedAt": "2026-09-13T11:59:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-running-input",
+        "status": "running",
+        "providerName": "codex",
+        "activeTurnId": "turn-running-input",
+        "lastError": null,
+        "updatedAt": "2026-09-13T11:59:00.000Z"
+      },
+      "latestUserMessageAt": "2026-09-13T11:58:00.000Z",
+      "hasPendingApprovals": false,
+      "hasPendingUserInput": true,
+      "hasActionableProposedPlan": false,
+      "backgroundLiveness": "working",
+      "planProgress": {
+        "step": "Synthetic input step",
+        "completedSteps": 1,
+        "totalSteps": 3
+      }
+    },
+    {
+      "id": "thread-pending-approval",
+      "projectId": "project-synthetic",
+      "title": "Synthetic approval",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "approval-required",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": {
+        "turnId": "turn-pending-approval",
+        "state": "running",
+        "requestedAt": "2026-09-13T11:56:00.000Z",
+        "startedAt": "2026-09-13T11:56:01.000Z",
+        "completedAt": null,
+        "assistantMessageId": null
+      },
+      "createdAt": "2026-09-13T11:55:00.000Z",
+      "updatedAt": "2026-09-13T11:57:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-pending-approval",
+        "status": "running",
+        "providerName": "codex",
+        "activeTurnId": "turn-pending-approval",
+        "lastError": null,
+        "updatedAt": "2026-09-13T11:57:00.000Z"
+      },
+      "latestUserMessageAt": "2026-09-13T11:56:00.000Z",
+      "hasPendingApprovals": true,
+      "hasPendingUserInput": false,
+      "hasActionableProposedPlan": false
+    },
+    {
+      "id": "thread-completed",
+      "projectId": "project-synthetic",
+      "title": "Synthetic completed",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": {
+        "turnId": "turn-completed",
+        "state": "completed",
+        "requestedAt": "2026-09-13T11:50:00.000Z",
+        "startedAt": "2026-09-13T11:50:01.000Z",
+        "completedAt": "2026-09-13T11:52:00.000Z",
+        "assistantMessageId": null
+      },
+      "createdAt": "2026-09-13T11:49:00.000Z",
+      "updatedAt": "2026-09-13T11:52:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-completed",
+        "status": "ready",
+        "providerName": "codex",
+        "activeTurnId": null,
+        "lastError": null,
+        "updatedAt": "2026-09-13T11:52:00.000Z"
+      },
+      "latestUserMessageAt": "2026-09-13T11:50:00.000Z",
+      "hasPendingApprovals": false,
+      "hasPendingUserInput": false,
+      "hasActionableProposedPlan": false
+    },
+    {
+      "id": "thread-error",
+      "projectId": "project-synthetic",
+      "title": "Synthetic error",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": {
+        "turnId": "turn-error",
+        "state": "error",
+        "requestedAt": "2026-09-13T11:45:00.000Z",
+        "startedAt": "2026-09-13T11:45:01.000Z",
+        "completedAt": "2026-09-13T11:46:00.000Z",
+        "assistantMessageId": null
+      },
+      "createdAt": "2026-09-13T11:44:00.000Z",
+      "updatedAt": "2026-09-13T11:46:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-error",
+        "status": "error",
+        "providerName": "codex",
+        "activeTurnId": null,
+        "lastError": "Synthetic provider failure",
+        "updatedAt": "2026-09-13T11:46:00.000Z"
+      },
+      "latestUserMessageAt": "2026-09-13T11:45:00.000Z",
+      "hasPendingApprovals": false,
+      "hasPendingUserInput": false,
+      "hasActionableProposedPlan": false
+    },
+    {
+      "id": "thread-background-working",
+      "projectId": "project-synthetic",
+      "title": "Synthetic background work",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": null,
+      "createdAt": "2026-09-13T11:40:00.000Z",
+      "updatedAt": "2026-09-13T11:55:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-background-working",
+        "status": "ready",
+        "providerName": "codex",
+        "activeTurnId": null,
+        "lastError": null,
+        "updatedAt": "2026-09-13T11:55:00.000Z"
+      },
+      "latestUserMessageAt": null,
+      "hasPendingApprovals": false,
+      "hasPendingUserInput": false,
+      "hasActionableProposedPlan": false,
+      "backgroundLiveness": "working"
+    },
+    {
+      "id": "thread-background-monitoring",
+      "projectId": "project-synthetic",
+      "title": "Synthetic monitoring",
+      "modelSelection": {
+        "instanceId": "codex",
+        "model": "synthetic-model"
+      },
+      "runtimeMode": "full-access",
+      "interactionMode": "default",
+      "branch": null,
+      "worktreePath": null,
+      "latestTurn": null,
+      "createdAt": "2026-09-13T11:35:00.000Z",
+      "updatedAt": "2026-09-13T11:54:00.000Z",
+      "archivedAt": null,
+      "settledOverride": null,
+      "settledAt": null,
+      "session": {
+        "threadId": "thread-background-monitoring",
+        "status": "ready",
+        "providerName": "codex",
+        "activeTurnId": null,
+        "lastError": null,
+        "updatedAt": "2026-09-13T11:54:00.000Z"
+      },
+      "latestUserMessageAt": null,
+      "hasPendingApprovals": false,
+      "hasPendingUserInput": false,
+      "hasActionableProposedPlan": false,
+      "backgroundLiveness": "monitoring"
+    }
+  ],
+  "updatedAt": "2026-09-13T11:59:00.000Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "dankT3Code",
+  "name": "T3 Code",
+  "description": "T3 Code activity companion — development scaffold; live integration not implemented",
+  "version": "0.0.0",
+  "author": "alcxyz",
+  "icon": "terminal",
+  "type": "widget",
+  "capabilities": ["dankbar-widget"],
+  "component": "./DankT3CodeWidget.qml",
+  "permissions": []
+}

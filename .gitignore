@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+.direnv/
+result
+result-*
+__pycache__/
