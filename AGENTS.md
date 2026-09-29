@@ -4,8 +4,8 @@ This is a DankMaterialShell plugin, not a Codex plugin. Read `docs/adr/README.md
 and relevant accepted decisions before changing its architecture.
 
 - GitHub is canonical. Work on `dev`, push to GitHub `origin`, and promote through
-  a pull request to `main`. Squash merge by default; retain the long-lived `dev`
-  branch. Never push directly to `main`.
+  a pull request to `main`. Squash-merge feature PRs, merge promotions with a
+  merge commit, and retain the long-lived `dev` branch. Never push directly to `main`.
 - Keep `.github/workflows/ci.yml` identical to the canonical
   `templates/github/workflows/plugin-ci.yml` in the maintained `dms-plugins`
   aggregate. The copy must remain self-contained for forks. When working under
